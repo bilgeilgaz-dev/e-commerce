@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row margin-top mobile-row">
+    <h5 class="col-2 pr-0">Filter by color: </h5>
+    <div class="col-6 pl-0 btn-group" role="group" aria-label="Basic example" data-toggle="button">
+      <button class="btn btn-dark ml-2" (click)="displayColor($event.target.value)" value="Black">Black</button>
+      <button class="btn btn-dark ml-2" (click)="displayColor($event.target.value)" value="Rose Nude">Rose
+        Nude</button>
+      <button class="btn btn-dark ml-2" (click)="displayColor($event.target.value)" value="White">White</button>
+      <button class="btn btn-dark ml-2" (click)="displayColor($event.target.value)" value="Grey">Grey</button>
+      <button class="btn btn-dark ml-2" (click)="displayColor($event.target.value)" value="Navy">Navy</button>
+    </div>
+  </div>
+  <div class="row margin-top mobile-row">
+    <h5 class="col-2 pr-0">Filter by size: </h5>
+    <div class="col-6 pl-0 btn-group" role="group" aria-label="Basic example" data-toggle="button">
+      <button class="btn btn-dark ml-2" (click)="displaySize($event.target.value)" value="XS">XS</button>
+      <button class="btn btn-dark ml-2" (click)="displaySize($event.target.value)" value="S">S</button>
+      <button class="btn btn-dark ml-2" (click)="displaySize($event.target.value)" value="M">M</button>
+      <button class="btn btn-dark ml-2" (click)="displaySize($event.target.value)" value="L">L</button>
+      <button class="btn btn-dark ml-2" (click)="displaySize($event.target.value)" value="XL">XL</button>
+    </div>
+  </div>
+  <div *ngIf="this.products.length" class="row align-content-start">
+    <div class="col-6 margin-top" *ngFor="let product of products">
+      <div class="thumbnail">
+        <img class="img-main w-100" src="{{product.image_link}}" style="z-index: -1;">
+        <div class="right-bottom">
+          <p class="out-of-stock" *ngIf="product.availability !== 'in stock'">out of stock</p>
+          <button class="btn price w-100" (click)="addToCart(this.product)"
+            [disabled]="product.availability !== 'in stock'">{{product.price}}</button>
+        </div>
+
+      </div>
+      <div class="row text-center mt-2 mobile-row-info">
+        <p class="col-6 border-right">{{product.title}}</p>
+        <p class="col-2 border-right">{{product.size}} </p>
+        <p class="col-4">{{product.color}}</p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!this.products.length" class="row mt-5 pt-5 justify-content-center">
+    <h5>There is no product for these filters.</h5>
+  </div>
+</div>

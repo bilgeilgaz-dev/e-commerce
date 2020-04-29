@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+.margin-top {
+  margin-top: 1.5rem;
+}
+
+.margin-top-2 {
+  margin-top: 4.5rem;
+}
+
+.cart {
+  margin-bottom: 7.5rem;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+
+.right-50 {
+  right: 50px;
+}
+
+.btn-dark.active {
+  background-color: white !important;
+  color: black !important;
+}
+
+.img-main {
+  display: block;
+}
+
+.thumbnail {
+  position: relative;
+  display: inline-block;
+}
+
+.right-bottom {
+  position: absolute;
+  bottom: 10%;
+  right: 4%;
+}
+
+.price {
+  background: white !important;
+}
+
+.out-of-stock {
+  color: white;
+  background: red;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 1000px) {
+
+  h5,
+  h4 {
+    font-size: 1rem !important;
+  }
+
+  p,
+  .btn {
+    font-size: 0.7rem !important;
+    line-height: 1 !important;
+  }
+
+  .mobile-row .col-2 {
+    flex: 0 0 29%;
+    max-width: 29%;
+  }
+
+  .mobile-row .col-6 {
+    flex: 0 0 70%;
+    max-width: 70%;
+  }
+
+  .out-of-stock {
+    margin-bottom: 0.2rem;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    width: 50%;
+  }
+
+  .right-50 {
+    right: 20px !important;
+  }
+
+  .mobile-row .col-2 {
+    max-width: 22%;
+  }
+
+  .btn-dark {
+    height: 35px;
+  }
+
+  .margin-top {
+    margin-top: 1rem !important;
+  }
+
+  .mobile-row-info .col-2 {
+    max-width: 25%;
+  }
+
+  .mobile-row-info .col-4 {
+    max-width: 30%;
+  }
+
+  .mobile-row-info .col-6 {
+    max-width: 40%;
+  }
+
+  .btn {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+    border: 1px solid black !important;
+  }
+
+  .right-bottom {
+    display: flex;
+    position: inherit;
+    right: 0px;
+    height: 30px;
+    margin-top: 5px;
+  }
+
+  .out-of-stock {
+    height: 100%;
+    margin-bottom: 0px !important;
+    margin-right: 5px;
+    padding: 4px;
+  }
+}
